@@ -1,0 +1,40 @@
+aid: amnic
+name: Amnic
+description: >-
+  Amnic is a cloud cost observability platform providing real-time cost
+  monitoring, anomaly detection, and optimization for cloud and Kubernetes
+  environments.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - FinOps
+  - Cloud Cost Observability
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/apis.yml
+created: '2026-03-27'
+modified: '2026-03-27'
+specificationVersion: '0.19'
+apis:
+  - aid: amnic:amnic
+    name: Amnic
+    description: >-
+      Amnic is a cloud cost observability platform providing real-time cost
+      monitoring, anomaly detection, and optimization for cloud and Kubernetes
+      environments.
+    humanURL: https://amnic.com/
+    tags:
+      - FinOps
+      - Cloud Cost Observability
+    properties:
+      - type: Documentation
+        url: https://docs.amnic.com/
+      - type: Getting Started
+        url: https://docs.amnic.com/
+common:
+  - type: Website
+    url: https://amnic.com/
+  - type: Documentation
+    url: https://docs.amnic.com/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
