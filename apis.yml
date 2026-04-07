@@ -7,8 +7,8 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - FinOps
   - Cloud Cost Observability
+  - FinOps
 url: >-
   https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/apis.yml
 created: '2026-03-27'
@@ -23,8 +23,8 @@ apis:
       environments.
     humanURL: https://amnic.com/
     tags:
-      - FinOps
       - Cloud Cost Observability
+      - FinOps
     properties:
       - type: Documentation
         url: https://docs.amnic.com/
