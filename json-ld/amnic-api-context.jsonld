@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amnic": "https://amnic.com/schema/",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "FilterRequest": "amnic:FilterRequest",
+    "filters": {
+      "@id": "amnic:filters",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "Filter": "amnic:Filter",
+    "filterBy": {
+      "@id": "amnic:filter_by",
+      "@type": "xsd:string"
+    },
+    "values": {
+      "@id": "amnic:values",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "ChartData": "amnic:ChartData",
+    "headers": {
+      "@id": "amnic:headers",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "rows": {
+      "@id": "amnic:rows",
+      "@container": "@set",
+      "@type": "xsd:string"
+    }
+  }
+}

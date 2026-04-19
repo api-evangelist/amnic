@@ -1,0 +1,213 @@
+openapi: 3.0.3
+info:
+  title: Amnic Cloud Cost Observability API
+  description: >-
+    The Amnic API provides programmatic access to cloud cost data, enabling automation
+    of reporting and integration with other tools. Use this API to retrieve saved chart
+    data with custom filters for AWS, GCP, Azure, and Kubernetes cost analytics.
+  version: 1.0.0
+  contact:
+    name: Amnic Support
+    url: https://amnic.com/contact
+  x-generated-from: documentation
+servers:
+- url: https://api.amnic.com/orchestrator
+  description: Amnic Production API
+security:
+- ApiKeyAuth: []
+tags:
+- name: Cost Analyzer
+  description: Operations for retrieving cost data and filters from saved charts in the Cost Analyzer.
+paths:
+  /v1/external/view/{uuid}/filters:
+    get:
+      operationId: getChartFilters
+      summary: Amnic Get Chart Filters
+      description: Returns the filters configured in a saved chart identified by its UUID.
+      tags:
+      - Cost Analyzer
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: The unique identifier of the saved chart in the Cost Analyzer.
+        schema:
+          type: string
+          format: uuid
+        example: 550e8400-e29b-41d4-a716-446655440000
+      responses:
+        '200':
+          description: Filters retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FilterList'
+              examples:
+                GetChartFilters200Example:
+                  summary: Default getChartFilters 200 response
+                  x-microcks-default: true
+                  value:
+                  - filter_by: service
+                    values:
+                    - EC2
+                    - S3
+                  - filter_by: region
+                    values:
+                    - us-east-1
+        '400':
+          description: Bad request - missing or invalid parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized - invalid or expired API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+  /v1/external/view/{uuid}:
+    post:
+      operationId: getChartData
+      summary: Amnic Get Chart Data
+      description: Retrieves saved chart data by providing additional custom filters to narrow the cost analysis results.
+      tags:
+      - Cost Analyzer
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: The unique identifier of the saved chart in the Cost Analyzer.
+        schema:
+          type: string
+          format: uuid
+        example: 550e8400-e29b-41d4-a716-446655440000
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FilterRequest'
+            examples:
+              GetChartDataRequestExample:
+                summary: Default getChartData request
+                x-microcks-default: true
+                value:
+                  filters:
+                  - filter_by: service
+                    values:
+                    - EC2
+      responses:
+        '200':
+          description: Chart data retrieved successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChartData'
+              examples:
+                GetChartData200Example:
+                  summary: Default getChartData 200 response
+                  x-microcks-default: true
+                  value:
+                    headers:
+                    - date
+                    - service
+                    - cost
+                    rows:
+                    - - '2025-03-01'
+                      - EC2
+                      - '1234.56'
+                    - - '2025-03-01'
+                      - S3
+                      - '98.76'
+        '400':
+          description: Bad request - missing or invalid parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized - invalid or expired API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Amnic API. Obtain your API key from the Amnic dashboard.
+  schemas:
+    Filter:
+      type: object
+      description: A filter object specifying a dimension and its accepted values for cost data queries.
+      properties:
+        filter_by:
+          type: string
+          description: The dimension to filter by (e.g., service, region, account, team).
+          example: service
+        values:
+          type: array
+          description: The list of values to include for the specified filter dimension.
+          items:
+            type: string
+          example:
+          - EC2
+          - S3
+      required:
+      - filter_by
+      - values
+    FilterList:
+      type: array
+      description: A list of filters configured on a saved chart.
+      items:
+        $ref: '#/components/schemas/Filter'
+    FilterRequest:
+      type: object
+      description: Request body for retrieving chart data with additional custom filters.
+      properties:
+        filters:
+          type: array
+          description: Additional filters to apply when retrieving chart data.
+          items:
+            $ref: '#/components/schemas/Filter'
+    ChartData:
+      type: object
+      description: Cost chart data returned as a 2D array with headers and rows.
+      properties:
+        headers:
+          type: array
+          description: Column headers for the cost data result set.
+          items:
+            type: string
+          example:
+          - date
+          - service
+          - cost
+        rows:
+          type: array
+          description: Rows of cost data values corresponding to the headers.
+          items:
+            type: array
+            items:
+              type: string
+    ErrorResponse:
+      type: object
+      description: Standard error response returned when a request fails.
+      properties:
+        message:
+          type: string
+          description: Human-readable description of the error.
+          example: Invalid or expired API key.
+        code:
+          type: integer
+          description: HTTP status code for the error.
+          example: 401

@@ -1,0 +1,12 @@
+{
+  "headers": [
+    "date",
+    "service",
+    "cost"
+  ],
+  "rows": [
+    [
+      "example-rows_item_item"
+    ]
+  ]
+}

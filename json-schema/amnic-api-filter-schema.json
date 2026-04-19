@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/json-schema/amnic-api-filter-schema.json",
+  "title": "Filter",
+  "description": "A filter object specifying a dimension and its accepted values for cost data queries.",
+  "type": "object",
+  "properties": {
+    "filter_by": {
+      "type": "string",
+      "description": "The dimension to filter by (e.g., service, region, account, team).",
+      "example": "service"
+    },
+    "values": {
+      "type": "array",
+      "description": "The list of values to include for the specified filter dimension.",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "EC2",
+        "S3"
+      ]
+    }
+  },
+  "required": [
+    "filter_by",
+    "values"
+  ]
+}

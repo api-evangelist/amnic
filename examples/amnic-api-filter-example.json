@@ -1,0 +1,7 @@
+{
+  "filter_by": "service",
+  "values": [
+    "EC2",
+    "S3"
+  ]
+}

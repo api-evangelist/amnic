@@ -1,0 +1,87 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amnic Cloud Cost Observability"
+  description: "Workflow capability for FinOps practitioners and engineering teams to programmatically retrieve cloud cost data, apply custom filters, and integrate Amnic cost analytics into reporting pipelines and AI-assisted cost optimization workflows."
+  tags:
+    - Amnic
+    - FinOps
+    - Cloud Cost
+    - Cost Observability
+    - Cost Optimization
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AMNIC_API_KEY: AMNIC_API_KEY
+
+capability:
+  consumes:
+    - import: amnic-api
+      location: ./shared/amnic-api.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: cloud-cost-api
+      description: "Unified REST API for cloud cost observability and FinOps reporting automation."
+      resources:
+        - path: /v1/charts/{uuid}/filters
+          name: cost-chart-filters
+          description: "Retrieve configured filters for a saved cost analysis chart."
+          operations:
+            - method: GET
+              name: get-chart-filters
+              description: "Returns the filter dimensions and values configured in a saved Amnic Cost Analyzer chart."
+              call: "amnic-api.get-chart-filters"
+              with:
+                uuid: "rest.uuid"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+        - path: /v1/charts/{uuid}/data
+          name: cost-chart-data
+          description: "Retrieve cloud cost data from a saved chart with optional custom filters."
+          operations:
+            - method: POST
+              name: get-chart-data
+              description: "Retrieves cloud cost data by applying custom filters to a saved Amnic cost chart."
+              call: "amnic-api.get-chart-data"
+              with:
+                uuid: "rest.uuid"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: cloud-cost-mcp
+      transport: http
+      description: "MCP server for AI-assisted cloud cost analysis and FinOps automation."
+      tools:
+        - name: get-cost-chart-filters
+          description: "Retrieve the filter dimensions configured in a saved Amnic cost chart for understanding available cost segmentation options."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "amnic-api.get-chart-filters"
+          with:
+            uuid: "tools.uuid"
+          outputParameters:
+            - type: object
+              mapping: "$."
+
+        - name: get-cost-chart-data
+          description: "Retrieve cloud cost data from an Amnic saved chart with custom filters for AI-powered FinOps analysis, anomaly investigation, and cost optimization recommendations."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "amnic-api.get-chart-data"
+          with:
+            uuid: "tools.uuid"
+          outputParameters:
+            - type: object
+              mapping: "$."

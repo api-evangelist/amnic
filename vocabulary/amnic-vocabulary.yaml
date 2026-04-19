@@ -1,0 +1,134 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amnic"
+  description: "Unified vocabulary mapping the operational (OpenAPI) and capability (Naftiko) dimensions of the Amnic Cloud Cost Observability platform."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: amnic-api
+      version: "1.0.0"
+      baseUrl: https://api.amnic.com/orchestrator
+      status: active
+
+  resources:
+    - name: charts
+      description: Saved cost analysis charts created in the Amnic Cost Analyzer.
+      apis:
+        - amnic-api
+      actions:
+        - get-chart-filters
+        - get-chart-data
+
+  actions:
+    - name: get-chart-filters
+      method: GET
+      pattern: read
+      description: Retrieve filter dimensions and values configured on a saved chart.
+    - name: get-chart-data
+      method: POST
+      pattern: query
+      description: Retrieve cost data from a saved chart with optional additional filters.
+
+  schemas:
+    core:
+      - name: Filter
+        description: A filter specifying a dimension and accepted values for cost queries.
+        properties:
+          - filter_by
+          - values
+      - name: FilterList
+        description: A list of filters configured on a saved chart.
+      - name: FilterRequest
+        description: Request body containing additional filters to apply when retrieving chart data.
+      - name: ChartData
+        description: Cost chart data returned as headers and rows arrays.
+        properties:
+          - headers
+          - rows
+
+  parameters:
+    identifiers:
+      - name: uuid
+        description: Unique identifier of a saved Cost Analyzer chart.
+        in: path
+        type: string
+        format: uuid
+
+  authentication:
+    schemes:
+      - type: apiKey
+        name: X-API-Key
+        in: header
+        description: API key for authenticating all Amnic API requests.
+
+capability:
+  workflows:
+    - name: Cloud Cost Observability
+      file: capabilities/cloud-cost-observability.yaml
+      description: FinOps workflow for retrieving and analyzing cloud cost data programmatically.
+      apis:
+        - amnic-api
+      toolCount: 2
+      personas:
+        - FinOps Practitioner
+        - Engineering Lead
+        - Finance Team
+
+  personas:
+    - id: finops-practitioner
+      name: FinOps Practitioner
+      description: Cloud cost management specialist responsible for cost visibility, optimization, and governance across cloud environments.
+      workflows:
+        - Cloud Cost Observability
+
+    - id: engineering-lead
+      name: Engineering Lead
+      description: Engineering manager integrating cloud cost data into CI/CD pipelines and automated reporting workflows.
+      workflows:
+        - Cloud Cost Observability
+
+    - id: finance-team
+      name: Finance Team
+      description: Finance professionals consuming cloud cost reports for budgeting, forecasting, and chargeback allocation.
+      workflows:
+        - Cloud Cost Observability
+
+  domains:
+    - name: Cloud Cost Management
+      description: Management and optimization of cloud infrastructure costs across AWS, GCP, Azure, and Kubernetes.
+      resources:
+        - charts
+      workflows:
+        - Cloud Cost Observability
+
+  namespaces:
+    consumed:
+      - name: amnic-api
+        baseUri: https://api.amnic.com/orchestrator
+    rest:
+      - name: cloud-cost-api
+        port: 8080
+    mcp:
+      - name: cloud-cost-mcp
+        port: 9090
+
+  binds:
+    - name: AMNIC_API_KEY
+      description: API key for authenticating requests to the Amnic Cloud Cost Observability API.
+      workflows:
+        - Cloud Cost Observability
+
+crossReference:
+  - resource: charts
+    operations:
+      - get-chart-filters
+      - get-chart-data
+    workflows:
+      - Cloud Cost Observability
+    personas:
+      - FinOps Practitioner
+      - Engineering Lead
+      - Finance Team

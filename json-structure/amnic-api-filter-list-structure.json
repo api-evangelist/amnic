@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/json-structure/amnic-api-filter-list-structure.json",
+  "name": "FilterList",
+  "description": "A list of filters configured on a saved chart.",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Filter"
+  }
+}

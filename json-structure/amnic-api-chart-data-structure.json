@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/json-structure/amnic-api-chart-data-structure.json",
+  "name": "ChartData",
+  "description": "Cost chart data returned as a 2D array with headers and rows.",
+  "type": "object",
+  "properties": {
+    "headers": {
+      "type": "array",
+      "description": "Column headers for the cost data result set.",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "date",
+        "service",
+        "cost"
+      ]
+    },
+    "rows": {
+      "type": "array",
+      "description": "Rows of cost data values corresponding to the headers.",
+      "items": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

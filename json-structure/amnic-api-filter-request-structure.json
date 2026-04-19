@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/json-structure/amnic-api-filter-request-structure.json",
+  "name": "FilterRequest",
+  "description": "Request body for retrieving chart data with additional custom filters.",
+  "type": "object",
+  "properties": {
+    "filters": {
+      "type": "array",
+      "description": "Additional filters to apply when retrieving chart data.",
+      "items": {
+        "$ref": "#/components/schemas/Filter"
+      }
+    }
+  }
+}
