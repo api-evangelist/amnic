@@ -140,6 +140,8 @@ common:
     - name: Kubernetes
       description: Native Kubernetes cost observability for container workloads, namespace cost allocation, and cluster efficiency
         optimization.
+  - type: LLMsTxt
+    url: https://docs.amnic.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
