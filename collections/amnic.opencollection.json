@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amnic Cloud Cost Observability API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-API-Key",
+      "value": "{{X-API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cost Analyzer",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amnic Get Chart Filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.amnic.com/orchestrator/v1/external/view/:uuid/filters",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "550e8400-e29b-41d4-a716-446655440000",
+                "type": "path",
+                "description": "The unique identifier of the saved chart in the Cost Analyzer."
+              }
+            ]
+          },
+          "docs": "Returns the filters configured in a saved chart identified by its UUID."
+        },
+        {
+          "info": {
+            "name": "Amnic Get Chart Data",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.amnic.com/orchestrator/v1/external/view/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "550e8400-e29b-41d4-a716-446655440000",
+                "type": "path",
+                "description": "The unique identifier of the saved chart in the Cost Analyzer."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieves saved chart data by providing additional custom filters to narrow the cost analysis results."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
