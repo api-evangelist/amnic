@@ -6,7 +6,7 @@ description: >-
   for cloud and Kubernetes environments. Powered by context-aware AI agents, Amnic helps FinOps practitioners,
   engineering leads, and finance teams gain visibility into AWS, GCP, Azure, and Kubernetes costs through automated
   reporting, anomaly detection, budget governance, and programmatic API access.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Cloud Cost Observability
   - FinOps
