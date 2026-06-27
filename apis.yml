@@ -54,13 +54,13 @@ apis:
         url: json-structure/amnic-api-filter-request-structure.json
       - type: JSONStructure
         url: json-structure/amnic-api-chart-data-structure.json
-      - type: Example
+      - type: Examples
         url: examples/amnic-api-filter-example.json
-      - type: Example
+      - type: Examples
         url: examples/amnic-api-filter-list-example.json
-      - type: Example
+      - type: Examples
         url: examples/amnic-api-filter-request-example.json
-      - type: Example
+      - type: Examples
         url: examples/amnic-api-chart-data-example.json
 common:
   - type: GitHubOrganization
@@ -153,7 +153,7 @@ common:
         description: >-
           Native Kubernetes cost observability for container workloads, namespace cost allocation, and cluster
           efficiency optimization.
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.amnic.com/llms.txt
 maintainers:
   - FN: Kin Lane
