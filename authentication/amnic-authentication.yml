@@ -1,0 +1,17 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/amnic-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: X-API-Key
+  description: API key for authenticating requests to the Amnic API. Obtain your API key from
+    the Amnic dashboard.
+  sources:
+  - openapi/amnic-openapi.yml

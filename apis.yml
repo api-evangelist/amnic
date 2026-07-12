@@ -63,6 +63,10 @@ apis:
       - type: Examples
         url: examples/amnic-api-chart-data-example.json
 common:
+  - type: DomainSecurity
+    url: security/amnic-domain-security.yml
+  - type: Authentication
+    url: authentication/amnic-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/amnic
   - type: Website
