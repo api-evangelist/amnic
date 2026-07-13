@@ -1,5 +1,19 @@
+# amnic — Spectral ruleset (strengthened)
+# Plain Spectral. Existing hand-authored rules preserved; measured rules added
+# from this provider's own OpenAPI conventions by strengthen_ruleset.py,
+# then self-validated against the spec.
+#
+# Provenance:
+#   - servers-https-only: 100% of servers already https (error)
+#   - servers-expected-domain: 1/1 servers on amnic.com
+#   - schema-names-casing: pascal @ 100% (n=5)
+#   - security: global (root) — NOT emitting operation-security-required
+#   - error-schema-defined: ErrorResponse
+#   - merge: kept 31 existing, added 3 measured, upgraded 0
+#   - added: servers-expected-domain, schema-names-casing, error-schema-defined
+extends:
+  - spectral:oas
 rules:
-  # INFO / METADATA
   info-title-prefix:
     description: API title should start with "Amnic".
     severity: warn
@@ -7,8 +21,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^Amnic'
-
+        match: ^Amnic
   info-description-required:
     description: API info must have a description of at least 20 characters.
     severity: error
@@ -16,7 +29,6 @@ rules:
     then:
       field: description
       function: truthy
-
   info-version-required:
     description: API info must define a version.
     severity: error
@@ -24,7 +36,6 @@ rules:
     then:
       field: version
       function: truthy
-
   info-contact-required:
     description: API info should include contact information.
     severity: warn
@@ -32,8 +43,6 @@ rules:
     then:
       field: contact
       function: truthy
-
-  # OPENAPI VERSION
   openapi-version-3:
     description: OpenAPI version must be 3.0.x.
     severity: error
@@ -41,9 +50,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^3\.0\.'
-
-  # SERVERS
+        match: ^3\.0\.
   servers-defined:
     description: At least one server must be defined.
     severity: error
@@ -51,7 +58,6 @@ rules:
     then:
       field: servers
       function: truthy
-
   servers-https:
     description: Server URLs must use HTTPS.
     severity: error
@@ -59,8 +65,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^https://'
-
+        match: ^https://
   servers-description:
     description: Each server should have a description.
     severity: warn
@@ -68,8 +73,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # PATHS - NAMING CONVENTIONS
   paths-kebab-case:
     description: Path segments should use kebab-case (lowercase with hyphens).
     severity: warn
@@ -77,8 +80,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^(/[a-z0-9{}-]+)+$'
-
+        match: ^(/[a-z0-9{}-]+)+$
   paths-no-trailing-slash:
     description: Paths must not have trailing slashes.
     severity: error
@@ -86,9 +88,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        notMatch: '/$'
-
-  # OPERATIONS
+        notMatch: /$
   operation-summary-required:
     description: Every operation must have a summary.
     severity: error
@@ -96,7 +96,6 @@ rules:
     then:
       field: summary
       function: truthy
-
   operation-summary-prefix:
     description: Operation summaries should start with "Amnic".
     severity: warn
@@ -104,8 +103,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^Amnic'
-
+        match: ^Amnic
   operation-description-required:
     description: Every operation should have a description.
     severity: warn
@@ -113,7 +111,6 @@ rules:
     then:
       field: description
       function: truthy
-
   operation-id-required:
     description: Every operation must have an operationId.
     severity: error
@@ -121,7 +118,6 @@ rules:
     then:
       field: operationId
       function: truthy
-
   operation-id-camel-case:
     description: operationId should use camelCase.
     severity: warn
@@ -129,8 +125,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^[a-z][a-zA-Z0-9]*$'
-
+        match: ^[a-z][a-zA-Z0-9]*$
   operation-tags-required:
     description: Every operation must have at least one tag.
     severity: error
@@ -138,8 +133,6 @@ rules:
     then:
       field: tags
       function: truthy
-
-  # TAGS
   tags-global-defined:
     description: Global tags array should be defined.
     severity: warn
@@ -147,7 +140,6 @@ rules:
     then:
       field: tags
       function: truthy
-
   tags-description:
     description: Global tags should have descriptions.
     severity: warn
@@ -155,8 +147,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # PARAMETERS
   parameter-description-required:
     description: Every parameter must have a description.
     severity: error
@@ -164,7 +154,6 @@ rules:
     then:
       field: description
       function: truthy
-
   parameter-snake-case:
     description: Query and path parameter names should use snake_case or kebab-case.
     severity: warn
@@ -172,9 +161,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^[a-z][a-z0-9_]*$'
-
-  # REQUEST BODIES
+        match: ^[a-z][a-z0-9_]*$
   request-body-content-type:
     description: Request bodies should use application/json content type.
     severity: warn
@@ -182,8 +169,6 @@ rules:
     then:
       field: application/json
       function: truthy
-
-  # RESPONSES
   response-success-required:
     description: Every operation must have at least one 2xx response.
     severity: error
@@ -191,7 +176,6 @@ rules:
     then:
       field: responses
       function: truthy
-
   response-401-required:
     description: Operations with security should document a 401 response.
     severity: warn
@@ -199,7 +183,6 @@ rules:
     then:
       field: '401'
       function: truthy
-
   response-description-required:
     description: Every response must have a description.
     severity: error
@@ -207,8 +190,6 @@ rules:
     then:
       field: description
       function: truthy
-
-  # SCHEMAS - PROPERTY NAMING
   schema-description-required:
     description: Top-level schemas should have a description.
     severity: warn
@@ -216,7 +197,6 @@ rules:
     then:
       field: description
       function: truthy
-
   schema-property-snake-case:
     description: Schema property names should use snake_case.
     severity: warn
@@ -224,9 +204,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '^[a-z][a-z0-9_]*$'
-
-  # SECURITY
+        match: ^[a-z][a-z0-9_]*$
   security-scheme-defined:
     description: Security schemes must be defined in components.
     severity: error
@@ -234,7 +212,6 @@ rules:
     then:
       field: securitySchemes
       function: truthy
-
   security-global-defined:
     description: Global security should be defined.
     severity: warn
@@ -242,8 +219,6 @@ rules:
     then:
       field: security
       function: truthy
-
-  # HTTP METHOD CONVENTIONS
   get-no-request-body:
     description: GET operations must not have a request body.
     severity: error
@@ -251,8 +226,6 @@ rules:
     then:
       field: requestBody
       function: falsy
-
-  # GENERAL QUALITY
   no-empty-descriptions:
     description: Descriptions must not be empty strings.
     severity: error
@@ -260,12 +233,35 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: '.+'
-
+        match: .+
   examples-encouraged:
     description: Operations should include examples for better documentation.
     severity: info
     given: $.paths[*][*].responses[*].content[*]
     then:
       field: examples
+      function: truthy
+  servers-expected-domain:
+    description: Server URLs should be on the amnic.com domain.
+    severity: warn
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: amnic\.com
+  schema-names-casing:
+    description: Component schema names should be PascalCase (the dominant convention in this API).
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: '@key'
+      function: casing
+      functionOptions:
+        type: pascal
+  error-schema-defined:
+    description: A shared error schema (ErrorResponse) should be defined for error payloads.
+    severity: warn
+    given: $.components.schemas
+    then:
+      field: ErrorResponse
       function: truthy
