@@ -1,10 +1,7 @@
 openapi: 3.0.3
 info:
-  title: Amnic Cloud Cost Observability API
-  description: >-
-    The Amnic API provides programmatic access to cloud cost data, enabling automation
-    of reporting and integration with other tools. Use this API to retrieve saved chart
-    data with custom filters for AWS, GCP, Azure, and Kubernetes cost analytics.
+  title: Amnic Cloud Cost Observability Cost Analyzer API
+  description: The Amnic API provides programmatic access to cloud cost data, enabling automation of reporting and integration with other tools. Use this API to retrieve saved chart data with custom filters for AWS, GCP, Azure, and Kubernetes cost analytics.
   version: 1.0.0
   contact:
     name: Amnic Support
@@ -139,46 +136,19 @@ paths:
         delay: 0
         dispatcher: FALLBACK
 components:
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: X-API-Key
-      description: API key for authenticating requests to the Amnic API. Obtain your API key from the Amnic dashboard.
   schemas:
-    Filter:
+    ErrorResponse:
       type: object
-      description: A filter object specifying a dimension and its accepted values for cost data queries.
+      description: Standard error response returned when a request fails.
       properties:
-        filter_by:
+        message:
           type: string
-          description: The dimension to filter by (e.g., service, region, account, team).
-          example: service
-        values:
-          type: array
-          description: The list of values to include for the specified filter dimension.
-          items:
-            type: string
-          example:
-          - EC2
-          - S3
-      required:
-      - filter_by
-      - values
-    FilterList:
-      type: array
-      description: A list of filters configured on a saved chart.
-      items:
-        $ref: '#/components/schemas/Filter'
-    FilterRequest:
-      type: object
-      description: Request body for retrieving chart data with additional custom filters.
-      properties:
-        filters:
-          type: array
-          description: Additional filters to apply when retrieving chart data.
-          items:
-            $ref: '#/components/schemas/Filter'
+          description: Human-readable description of the error.
+          example: Invalid or expired API key.
+        code:
+          type: integer
+          description: HTTP status code for the error.
+          example: 401
     ChartData:
       type: object
       description: Cost chart data returned as a 2D array with headers and rows.
@@ -199,15 +169,42 @@ components:
             type: array
             items:
               type: string
-    ErrorResponse:
+    FilterList:
+      type: array
+      description: A list of filters configured on a saved chart.
+      items:
+        $ref: '#/components/schemas/Filter'
+    Filter:
       type: object
-      description: Standard error response returned when a request fails.
+      description: A filter object specifying a dimension and its accepted values for cost data queries.
       properties:
-        message:
+        filter_by:
           type: string
-          description: Human-readable description of the error.
-          example: Invalid or expired API key.
-        code:
-          type: integer
-          description: HTTP status code for the error.
-          example: 401
+          description: The dimension to filter by (e.g., service, region, account, team).
+          example: service
+        values:
+          type: array
+          description: The list of values to include for the specified filter dimension.
+          items:
+            type: string
+          example:
+          - EC2
+          - S3
+      required:
+      - filter_by
+      - values
+    FilterRequest:
+      type: object
+      description: Request body for retrieving chart data with additional custom filters.
+      properties:
+        filters:
+          type: array
+          description: Additional filters to apply when retrieving chart data.
+          items:
+            $ref: '#/components/schemas/Filter'
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for authenticating requests to the Amnic API. Obtain your API key from the Amnic dashboard.
