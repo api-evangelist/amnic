@@ -6,7 +6,20 @@ description: >-
   for cloud and Kubernetes environments. Powered by context-aware AI agents, Amnic helps FinOps practitioners,
   engineering leads, and finance teams gain visibility into AWS, GCP, Azure, and Kubernetes costs through automated
   reporting, anomaly detection, budget governance, and programmatic API access.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amnic.png
 tags:
   - Cloud Cost Observability
   - FinOps
@@ -20,48 +33,43 @@ created: '2026-03-27'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: amnic:amnic-api
-    name: Amnic Cloud Cost Observability API
-    description: >-
-      The Amnic API provides programmatic access to cloud cost data from saved Cost Analyzer charts, enabling automation
-      of reporting and integration with other FinOps tools. Authenticate with an API key header to retrieve chart
-      filters and cost data with custom filter parameters.
-    humanURL: https://amnic.com/
-    tags:
-      - Cloud Cost Observability
-      - FinOps
-      - Cost Analytics
-    properties:
-      - type: Documentation
-        url: https://docs.amnic.com/
-      - type: GettingStarted
-        url: https://docs.amnic.com/
-      - type: OpenAPI
-        url: openapi/amnic-openapi.yml
-      - type: JSONSchema
-        url: json-schema/amnic-api-filter-schema.json
-      - type: JSONSchema
-        url: json-schema/amnic-api-filter-list-schema.json
-      - type: JSONSchema
-        url: json-schema/amnic-api-filter-request-schema.json
-      - type: JSONSchema
-        url: json-schema/amnic-api-chart-data-schema.json
-      - type: JSONStructure
-        url: json-structure/amnic-api-filter-structure.json
-      - type: JSONStructure
-        url: json-structure/amnic-api-filter-list-structure.json
-      - type: JSONStructure
-        url: json-structure/amnic-api-filter-request-structure.json
-      - type: JSONStructure
-        url: json-structure/amnic-api-chart-data-structure.json
-      - type: Examples
-        url: examples/amnic-api-filter-example.json
-      - type: Examples
-        url: examples/amnic-api-filter-list-example.json
-      - type: Examples
-        url: examples/amnic-api-filter-request-example.json
-      - type: Examples
-        url: examples/amnic-api-chart-data-example.json
+- aid: amnic:amnic-cost-analyzer-api
+  name: Amnic Cost Analyzer API
+  description: Operations for retrieving cost data and filters from saved charts in the Cost Analyzer.
+  humanURL: https://amnic.com/
+  tags:
+  - Cost Analyzer
+  properties:
+  - type: OpenAPI
+    url: openapi/amnic-cost-analyzer-api-openapi.yml
+  - type: Documentation
+    url: https://docs.amnic.com/
+  - type: GettingStarted
+    url: https://docs.amnic.com/
+  - type: JSONSchema
+    url: json-schema/amnic-api-filter-schema.json
+  - type: JSONSchema
+    url: json-schema/amnic-api-filter-list-schema.json
+  - type: JSONSchema
+    url: json-schema/amnic-api-filter-request-schema.json
+  - type: JSONSchema
+    url: json-schema/amnic-api-chart-data-schema.json
+  - type: JSONStructure
+    url: json-structure/amnic-api-filter-structure.json
+  - type: JSONStructure
+    url: json-structure/amnic-api-filter-list-structure.json
+  - type: JSONStructure
+    url: json-structure/amnic-api-filter-request-structure.json
+  - type: JSONStructure
+    url: json-structure/amnic-api-chart-data-structure.json
+  - type: Examples
+    url: examples/amnic-api-filter-example.json
+  - type: Examples
+    url: examples/amnic-api-filter-list-example.json
+  - type: Examples
+    url: examples/amnic-api-filter-request-example.json
+  - type: Examples
+    url: examples/amnic-api-chart-data-example.json
 common:
   - type: AgenticAccess
     url: agentic-access/amnic-agentic-access.yml
