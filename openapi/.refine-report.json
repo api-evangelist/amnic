@@ -1,0 +1,14 @@
+{
+  "provider": "amnic",
+  "sources": [
+    "amnic-cost-analyzer-api-openapi.yml"
+  ],
+  "outputs": [
+    "amnic-cost-analyzer-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
