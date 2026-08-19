@@ -1,0 +1,97 @@
+# Amnic Documentation
+
+## Amnic Documentation
+
+- [Amnic Documentation](https://docs.amnic.com/readme.md)
+- [Welcome to Amnic](https://docs.amnic.com/getting-started/welcome-to-amnic.md)
+- [Getting Started with Amnic](https://docs.amnic.com/getting-started/getting-started-with-amnic.md)
+- [Security](https://docs.amnic.com/account-and-security/security.md)
+- [Single Sign-On (SSO)](https://docs.amnic.com/account-and-security/single-sign-on-sso.md)
+- [Role-Based Access Control (RBAC)](https://docs.amnic.com/account-and-security/role-based-access-control-rbac.md)
+- [Team Management](https://docs.amnic.com/account-and-security/team-management.md)
+- [Org Settings](https://docs.amnic.com/account-and-security/org-settings.md)
+- [Account Settings](https://docs.amnic.com/account-and-security/account-settings.md)
+- [Virtual Hierarchy](https://docs.amnic.com/account-and-security/virtual-hierarchy.md)
+- [Virtual Tags](https://docs.amnic.com/account-and-security/virtual-tags.md)
+- [Connect Your AWS Account](https://docs.amnic.com/cloud-integrations/connect-your-aws-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-aws-account/troubleshoot.md)
+- [Connect Your GCP Account](https://docs.amnic.com/cloud-integrations/connect-your-gcp-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-gcp-account/troubleshoot.md)
+- [Connect Your Azure Account](https://docs.amnic.com/cloud-integrations/connect-your-azure-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-azure-account/troubleshoot.md)
+- [Connect Your OCI Account](https://docs.amnic.com/cloud-integrations/connect-your-oracle-cloud-account.md)
+- [Connect Your Kubernetes Clusters](https://docs.amnic.com/cloud-integrations/connect-your-kubernetes-clusters.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-kubernetes-clusters/troubleshoot.md)
+- [Connect a Kubernetes Cluster Using Terraform (EKS Blueprints)](https://docs.amnic.com/cloud-integrations/connect-a-kubernetes-cluster-using-terraform-eks-blueprints.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-a-kubernetes-cluster-using-terraform-eks-blueprints/troubleshoot.md)
+- [Connect Your Datadog Account](https://docs.amnic.com/cloud-integrations/connect-your-datadog-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-datadog-account/troubleshoot.md)
+- [Connect Your Cloudflare Account](https://docs.amnic.com/cloud-integrations/connect-your-cloudflare-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-cloudflare-account/troubleshoot.md)
+- [Connect Your MongoDB Atlas Account](https://docs.amnic.com/cloud-integrations/connect-your-mongodb-atlas-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-mongodb-atlas-account/troubleshoot.md)
+- [Connect Your OpenAI Account](https://docs.amnic.com/cloud-integrations/connect-your-openai-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-openai-account/troubleshoot.md)
+- [Connect Your Claude Platform Account](https://docs.amnic.com/cloud-integrations/connect-your-anthropic-account.md)
+- [Connect Your Claude.ai Account](https://docs.amnic.com/cloud-integrations/connect-your-claude.ai-account.md)
+- [Connect Your Other SaaS Account](https://docs.amnic.com/cloud-integrations/connect-your-other-saas-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-other-saas-account/troubleshoot.md)
+- [Connect Your VPC Account](https://docs.amnic.com/cloud-integrations/connect-your-vpc-account.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/connect-your-vpc-account/troubleshoot.md)
+- [Connect VPC Flowlogs](https://docs.amnic.com/cloud-integrations/connect-vpc-flowlogs.md)
+- [Creating SNS topics](https://docs.amnic.com/cloud-integrations/creating-sns-topics.md): This page covers the step to create SNS topics and integrate with Amnic.
+- [Connect your EC2 with Prometheus](https://docs.amnic.com/cloud-integrations/connect-your-ec2-with-prometheus.md)
+- [Jira Integration](https://docs.amnic.com/cloud-integrations/jira-integration.md)
+- [Alerts and Notifications](https://docs.amnic.com/cloud-integrations/alerts-and-notifications.md)
+- [Troubleshoot](https://docs.amnic.com/cloud-integrations/alerts-and-notifications/troubleshoot.md)
+- [GPU Metrics Collection](https://docs.amnic.com/cloud-integrations/gpu-metrics-collection.md)
+- [Amnic AI](https://docs.amnic.com/features/amnic-ai.md)
+- [Overview](https://docs.amnic.com/features/overview.md)
+- [Cost Analyzer](https://docs.amnic.com/features/cost-analyzer-1.md)
+- [Cost Analyzer: Filter & Control Glossary](https://docs.amnic.com/features/cost-analyzer-filter-and-control-glossary.md)
+- [FinOps for AI](https://docs.amnic.com/features/finops-for-ai.md)
+- [Cost Allocation](https://docs.amnic.com/features/cost-allocation-1.md)
+- [Set Up Cost Allocation in Amnic](https://docs.amnic.com/features/set-up-cost-allocation-in-amnic.md)
+- [Global Stream Field Mapping](https://docs.amnic.com/features/global-stream-field-mapping.md)
+- [Inventory Management](https://docs.amnic.com/features/inventory-management.md)
+- [Inventory Management Use Cases](https://docs.amnic.com/features/inventory-management/inventory-management-use-cases.md)
+- [AWS Resource Collection](https://docs.amnic.com/features/inventory-management/aws-resource-collection.md)
+- [Inventory Query Language (DSL): Syntax and Usage Guide](https://docs.amnic.com/features/inventory-management/inventory-query-language-dsl-syntax-and-usage-guide.md)
+- [Anomalies](https://docs.amnic.com/features/anomalies.md)
+- [Trend Anomalies](https://docs.amnic.com/features/trend-anomalies.md)
+- [Recommendations](https://docs.amnic.com/features/recommendations.md)
+- [Budgets](https://docs.amnic.com/features/budgets.md)
+- [K8s](https://docs.amnic.com/features/k8s-1.md)
+- [Custom Dashboards](https://docs.amnic.com/features/custom-dashboards.md)
+- [Amnic Dashboards](https://docs.amnic.com/features/amnic-dashboards.md)
+- [API Documentation](https://docs.amnic.com/features/api-documentation.md)
+- [Generating API Keys](https://docs.amnic.com/features/api-documentation/generating-api-keys.md)
+- [Custom Integration API Documentation](https://docs.amnic.com/features/api-documentation/custom-integration-api-documentation.md)
+- [Kubernetes API Documentation](https://docs.amnic.com/features/api-documentation/kubernetes-api-documentation.md)
+- [Orchestrator API](https://docs.amnic.com/features/api-documentation/orchestrator-api.md)
+- [MCP Server](https://docs.amnic.com/features/api-documentation/mcp-server.md)
+- [Commitment Reports](https://docs.amnic.com/features/commitment-reports.md)
+
+## Changelog
+
+- [Changelog](https://docs.amnic.com/changelog/readme.md): New updates and improvements
+- [Product update](https://docs.amnic.com/changelog/2026/product-update.md)
+- [Product update](https://docs.amnic.com/changelog/2026/product-update-1.md)
+- [Product update](https://docs.amnic.com/changelog/2025/product-update.md)
+- [Product update](https://docs.amnic.com/changelog/2025/product-update-1.md)
+
+
+---
+
+# Agent Instructions
+This documentation is published with GitBook. GitBook is the documentation platform designed so that both humans and AI agents can read, navigate, and reason over technical content effectively. Learn more at gitbook.com.
+
+## Querying This Documentation
+If you need additional information, you can query the documentation dynamically by asking a question.
+Perform an HTTP GET request on a page URL with the `ask` query parameter:
+```
+GET https://docs.amnic.com/readme.md?ask=<question>
+```
+The question should be specific, self-contained, and written in natural language.
+The response will contain a direct answer to the question and relevant excerpts and sources from the documentation.
+Use this mechanism when the answer is not explicitly present in the current page, you need clarification or additional context, or you want to retrieve related documentation sections.
