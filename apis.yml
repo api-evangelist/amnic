@@ -6,6 +6,18 @@ description: >-
   for cloud and Kubernetes environments. Powered by context-aware AI agents, Amnic helps FinOps practitioners,
   engineering leads, and finance teams gain visibility into AWS, GCP, Azure, and Kubernetes costs through automated
   reporting, anomaly detection, budget governance, and programmatic API access.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
