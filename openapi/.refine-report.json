@@ -1,7 +1,7 @@
 {
   "provider": "amnic",
   "sources": [
-    "amnic-cost-analyzer-api-openapi.yml"
+    "_ae-authored/amnic-openapi.yml"
   ],
   "outputs": [
     "amnic-cost-analyzer-api-openapi.yml"
@@ -10,8 +10,11 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "amnic-cost-analyzer-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amnic-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "amnic-cost-analyzer-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
