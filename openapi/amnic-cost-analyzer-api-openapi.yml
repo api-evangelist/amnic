@@ -137,18 +137,6 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      description: Standard error response returned when a request fails.
-      properties:
-        message:
-          type: string
-          description: Human-readable description of the error.
-          example: Invalid or expired API key.
-        code:
-          type: integer
-          description: HTTP status code for the error.
-          example: 401
     FilterList:
       type: array
       description: A list of filters configured on a saved chart.
@@ -202,6 +190,18 @@ components:
       required:
       - filter_by
       - values
+    ErrorResponse:
+      type: object
+      description: Standard error response returned when a request fails.
+      properties:
+        message:
+          type: string
+          description: Human-readable description of the error.
+          example: Invalid or expired API key.
+        code:
+          type: integer
+          description: HTTP status code for the error.
+          example: 401
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
