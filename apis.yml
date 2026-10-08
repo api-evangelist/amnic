@@ -87,6 +87,12 @@ apis:
   - type: Examples
     url: examples/amnic-api-chart-data-example.json
 common:
+  - type: Plans
+    url: plans/amnic-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amnic-rate-limits.yml
+  - type: FinOps
+    url: finops/amnic-finops.yml
   - type: AgenticAccess
     url: agentic-access/amnic-agentic-access.yml
   - type: DomainSecurity
