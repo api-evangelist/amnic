@@ -137,25 +137,18 @@ paths:
         dispatcher: FALLBACK
 components:
   schemas:
-    Filter:
+    ErrorResponse:
       type: object
-      description: A filter object specifying a dimension and its accepted values for cost data queries.
+      description: Standard error response returned when a request fails.
       properties:
-        filter_by:
+        message:
           type: string
-          description: The dimension to filter by (e.g., service, region, account, team).
-          example: service
-        values:
-          type: array
-          description: The list of values to include for the specified filter dimension.
-          items:
-            type: string
-          example:
-          - EC2
-          - S3
-      required:
-      - filter_by
-      - values
+          description: Human-readable description of the error.
+          example: Invalid or expired API key.
+        code:
+          type: integer
+          description: HTTP status code for the error.
+          example: 401
     FilterList:
       type: array
       description: A list of filters configured on a saved chart.
@@ -190,18 +183,25 @@ components:
             type: array
             items:
               type: string
-    ErrorResponse:
+    Filter:
       type: object
-      description: Standard error response returned when a request fails.
+      description: A filter object specifying a dimension and its accepted values for cost data queries.
       properties:
-        message:
+        filter_by:
           type: string
-          description: Human-readable description of the error.
-          example: Invalid or expired API key.
-        code:
-          type: integer
-          description: HTTP status code for the error.
-          example: 401
+          description: The dimension to filter by (e.g., service, region, account, team).
+          example: service
+        values:
+          type: array
+          description: The list of values to include for the specified filter dimension.
+          items:
+            type: string
+          example:
+          - EC2
+          - S3
+      required:
+      - filter_by
+      - values
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
