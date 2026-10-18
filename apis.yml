@@ -43,6 +43,15 @@ tags:
   - Cost Optimization
   - Kubernetes
   - AWS
+  - Microsoft Azure
+  - Google Cloud
+tags_raw:
+  - Cloud Cost Observability
+  - FinOps
+  - Cloud Cost Management
+  - Cost Optimization
+  - Kubernetes
+  - AWS
   - Azure
   - Google Cloud
 created: '2026-03-27'
