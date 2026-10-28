@@ -1,4 +1,4 @@
-# Amnic (amnic)
+# Amnic
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,75 +66,170 @@
 
 Amnic is a cloud cost observability platform providing real-time cost monitoring, anomaly detection, and optimization for cloud and Kubernetes environments. Powered by context-aware AI agents, Amnic helps FinOps practitioners, engineering leads, and finance teams gain visibility into AWS, GCP, Azure, and Kubernetes costs through automated reporting, anomaly detection, budget governance, and programmatic API access.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amnic/refs/heads/main/apis.yml)
+**Areas:** Cloud Cost Observability · FinOps · Cloud Cost Management · Cost Optimization · Kubernetes · AWS · Microsoft Azure · Google Cloud
 
-## Tags
+## Amnic on APIs.io
 
-- Cloud Cost Observability
-- FinOps
-- Cloud Cost Management
-- Cost Optimization
-- Kubernetes
-- AWS
-- Azure
-- Google Cloud
+Everything profiled for Amnic is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amnic/](https://apis.io/providers/amnic/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-05-19
+- [Amnic Cost Analyzer API](https://apis.io/apis/amnic/amnic-cost-analyzer-api/) — Operations for retrieving cost data and filters from saved charts in the Cost Analyzer.
 
-## APIs
+### Published properties
 
-### Amnic Cloud Cost Observability API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-The Amnic API provides programmatic access to cloud cost data from saved Cost Analyzer charts, enabling automation of reporting and integration with other FinOps tools. Authenticate with an API key header to retrieve chart filters and cost data with custom filter parameters.
+#### MCP servers (1)
 
-- **Human URL:** [https://amnic.com/](https://amnic.com/)
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [Moved to /providers/amnic/](https://apis.io/servers/amnic/amnic/)
 
-- Cloud Cost Observability
-- FinOps
-- Cost Analytics
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://docs.amnic.com/)
-- [Getting Started](https://docs.amnic.com/)
-- [OpenAPI](openapi/amnic-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/amnic.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/amnic.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/amnic-api-filter-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amnic-api-filter-list-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amnic-api-filter-request-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/amnic-api-chart-data-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/amnic-api-filter-structure.json)
-- [JSON Structure](json-structure/amnic-api-filter-list-structure.json)
-- [JSON Structure](json-structure/amnic-api-filter-request-structure.json)
-- [JSON Structure](json-structure/amnic-api-chart-data-structure.json)
-- [Example](examples/amnic-api-filter-example.json)
-- [Example](examples/amnic-api-filter-list-example.json)
-- [Example](examples/amnic-api-filter-request-example.json)
-- [Example](examples/amnic-api-chart-data-example.json)
+- [Amnic Agentic Access](https://apis.io/agentic-access/amnic/amnic-agentic-access/)
 
-## Common Properties
+#### JSON Schema (4)
 
-- [GitHub Organization](https://github.com/amnic)
+The data models the API reads and writes.
+
+- [ChartData](https://apis.io/schemas/amnic/amnic-api-chart-data/)
+- [Filter](https://apis.io/schemas/amnic/amnic-api-filter/)
+- [FilterList](https://apis.io/schemas/amnic/amnic-api-filter-list/)
+- [FilterRequest](https://apis.io/schemas/amnic/amnic-api-filter-request/)
+
+#### JSON Structure (4)
+
+Data models expressed in JSON Structure.
+
+- [Amnic Api Chart Data Structure](https://apis.io/json-structure/amnic/amnic-api-chart-data-structure/)
+- [Amnic Api Filter List Structure](https://apis.io/json-structure/amnic/amnic-api-filter-list-structure/)
+- [Amnic Api Filter Request Structure](https://apis.io/json-structure/amnic/amnic-api-filter-request-structure/)
+- [Amnic Api Filter Structure](https://apis.io/json-structure/amnic/amnic-api-filter-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amnic Api Context](https://apis.io/jsonld/amnic/amnic-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amnic Vocabulary](https://apis.io/vocabularies/amnic/amnic-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Amnic Api Chart Data Example](https://apis.io/examples/amnic/amnic-api-chart-data-example/)
+- [Amnic Api Filter Example](https://apis.io/examples/amnic/amnic-api-filter-example/)
+- [Amnic Api Filter Request Example](https://apis.io/examples/amnic/amnic-api-filter-request-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Amnic Cloud Cost Observability API](https://apis.io/collections/amnic/open-amnic/)
+- [Amnic Cloud Cost Observability Cost Analyzer API](https://apis.io/collections/amnic/open-amnic-cost-analyzer-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amnic — jsonschema rules](https://apis.io/rules/amnic/amnic-jsonschema-spectral-rules/)
+- [Amnic API Rules](https://apis.io/rules/amnic/amnic-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amnic Authentication](https://apis.io/security/amnic/amnic-authentication/)
+- [Amnic Domain Security](https://apis.io/security/amnic/amnic-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amnic Plans Pricing](https://apis.io/plans/amnic/amnic-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amnic Rate Limits](https://apis.io/rate-limits/amnic/amnic-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amnic Finops](https://apis.io/finops/amnic/amnic-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://amnic.com/)
 - [Documentation](https://docs.amnic.com/)
 - [Pricing](https://amnic.com/pricing)
 - [Blog](https://amnic.com/blog)
-- [LinkedIn](https://www.linkedin.com/company/amnic)
-- [Spectral Rules](rules/amnic-spectral-rules.yml)
-- [JSON-LD](json-ld/amnic-api-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Vocabulary](vocabulary/amnic-vocabulary.yaml)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [L L Ms Txt](https://docs.amnic.com/llms.txt)
+- [GitHub](https://github.com/amnic)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 28.6** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.7 |
+| Contract quality | 27.7 |
+| Contract governance | 27.3 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 35.7 |
+| Access clarity | 18.4 |
+
+**Agent readiness 37.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amnic/](https://apis.io/providers/amnic/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amnic: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amnic/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
